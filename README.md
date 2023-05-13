@@ -1,0 +1,1 @@
+streamlit run disease_pred.py in virtual environment

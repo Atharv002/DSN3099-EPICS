@@ -1,32 +1,19 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May 22 11:53:51 2022
-
-@author: siddhardhan
-"""
-
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
+#saved_models\diabetes_model.sav
+diabetes_model = pickle.load(open('saved_models\diabetes_model.sav', 'rb'))
 
-#a change was made here
-# loading the saved models
+heart_disease_model = pickle.load(open('saved_models\heart_disease_model1.pkl','rb'))
 
-diabetes_model = pickle.load(open('C:/Users/damle/Desktop/EPICS/saved models/diabetes_model.sav', 'rb'))
+parkinsons_model = pickle.load(open('saved_models\parkinsons_model.sav', 'rb'))
 
-heart_disease_model = pickle.load(open('C:/Users/damle/Desktop/EPICS/saved models/heart_disease_model.sav','rb'))
-
-parkinsons_model = pickle.load(open('C:/Users/damle/Desktop/EPICS/saved models/parkinsons_model.sav', 'rb'))
-
-lung_cancer_model = pickle.load(open('C:/Users/damle/Desktop/College Stuff/EPICS/flask_proj/model.pkl','rb'))
-
-
+lung_cancer_model = pickle.load(open('saved_models\lung_cancer_model.pkl','rb'))
 
 # sidebar for navigation
 with st.sidebar:
     
     selected = option_menu('Multiple Disease Prediction System',
-                          
                           ['Diabetes Prediction',
                            'Heart Disease Prediction',
                            'Parkinsons Prediction',
@@ -68,6 +55,9 @@ if (selected == 'Diabetes Prediction'):
     
     with col2:
         Age = st.text_input('Age of the Person')
+
+    with col3:
+        option=st.selectbox('How?',('Email','PhNo','Num'))
     
     
     # code for Prediction
