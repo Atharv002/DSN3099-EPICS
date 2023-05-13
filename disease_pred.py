@@ -8,7 +8,7 @@ heart_disease_model = pickle.load(open('saved_models\heart_disease_model1.pkl','
 
 parkinsons_model = pickle.load(open('saved_models\parkinsons_model.sav', 'rb'))
 
-lung_cancer_model = pickle.load(open('saved_models\lung_cancer_model.pkl','rb'))
+lung_cancer_model = pickle.load(open('saved_models\model.pkl','rb'))
 
 # sidebar for navigation
 with st.sidebar:
