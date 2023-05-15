@@ -10,6 +10,9 @@ parkinsons_model = pickle.load(open('saved_models\parkinsons_model.sav', 'rb'))
 
 lung_cancer_model = pickle.load(open('saved_models\model.pkl','rb'))
 
+skin_disease_model = pickle.load(open('saved_models\skin-disease-hybrid-model.pkl','rb'))
+#skin disease model
+
 # sidebar for navigation
 with st.sidebar:
     
@@ -17,11 +20,24 @@ with st.sidebar:
                           ['Diabetes Prediction',
                            'Heart Disease Prediction',
                            'Parkinsons Prediction',
-                           'Lung Cancer Prediction'],
-                          icons=['activity','heart','person','person'],
+                           'Lung Cancer Prediction',
+                           'Skin Disease Prediction'],
+                          icons=['activity','heart','person','heart','person'],
                           default_index=0)
     
     
+if (selected == 'Skin Disease Prediction'):
+    st.title('Skin Disease Prediction')
+    
+    uploaded_file=st.file_uploader('Upload file here', type=['png', 'jpg'],label_visibility="visible")
+    skin_diagnosis=''
+
+    if st.button('Test Result'):
+        skin_diagnosis=skin_disease_model.predict(uploaded_file)
+        print(skin_diagnosisss)
+
+
+
 # Diabetes Prediction Page
 if (selected == 'Diabetes Prediction'):
     
