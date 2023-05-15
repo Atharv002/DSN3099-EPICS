@@ -11,7 +11,7 @@ parkinsons_model = pickle.load(open('saved_models\parkinsons_model.sav', 'rb'))
 lung_cancer_model = pickle.load(open('saved_models\model.pkl','rb'))
 
 skin_disease_model = pickle.load(open('saved_models\skin-disease-hybrid-model.pkl','rb'))
-#skin disease model
+#skin disease model addition
 
 # sidebar for navigation
 with st.sidebar:
