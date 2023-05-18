@@ -1,12 +1,13 @@
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
+import cv2
+import numpy as np
+from PIL import Image
 #saved_models\diabetes_model.sav
 diabetes_model = pickle.load(open('saved_models\diabetes_model.sav', 'rb'))
 
 heart_disease_model = pickle.load(open('saved_models\heart_disease_model1.pkl','rb'))
-
-parkinsons_model = pickle.load(open('saved_models\parkinsons_model.sav', 'rb'))
 
 lung_cancer_model = pickle.load(open('saved_models\model.pkl','rb'))
 
@@ -29,12 +30,21 @@ with st.sidebar:
 if (selected == 'Skin Disease Prediction'):
     st.title('Skin Disease Prediction')
     
-    uploaded_file=st.file_uploader('Upload file here', type=['png', 'jpg'],label_visibility="visible")
-    skin_diagnosis=''
+    uploaded=st.file_uploader('Upload file here', type=['png', 'jpg'],label_visibility="visible")
+    predicted_class=''
+
+    
 
     if st.button('Test Result'):
-        skin_diagnosis=skin_disease_model.predict(uploaded_file)
-        print(skin_diagnosisss)
+        image=Image.open(uploaded)
+        image = np.array(image)
+        image = cv2.resize(image, (224, 224))
+        image = image.astype('float32') / 255.0
+        image = np.expand_dims(image, axis=0)
+        print(type(image))
+        #predictions = skin_disease_model.predict(image)
+        #predicted_class = np.argmax(predictions)
+        print(predicted_class)
 
 
 
