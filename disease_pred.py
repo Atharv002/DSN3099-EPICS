@@ -37,7 +37,7 @@ if (selected == 'Diabetes Prediction'):
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        Pregnancies = st.text_input('Number of Pregnancies')
+        Pregnancies = int(st.text_input('Number of Pregnancies'))
         
     with col2:
         Glucose = st.text_input('Glucose Level')
