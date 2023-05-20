@@ -4,9 +4,7 @@ from streamlit_option_menu import option_menu
 import cv2
 import numpy as np
 from PIL import Image
-#saved_models\diabetes_model.sav
-diabetes_model = pickle.load(open('saved_models\diabetes_model.sav', 'rb'))
-
+#saved_models\diabetes_model.sa
 heart_disease_model = pickle.load(open('saved_models\heart_disease_model1.pkl','rb'))
 
 lung_cancer_model = pickle.load(open('saved_models\model.pkl','rb'))
@@ -18,33 +16,13 @@ skin_disease_model = pickle.load(open('saved_models\skin-disease-hybrid-model.pk
 with st.sidebar:
     
     selected = option_menu('Multiple Disease Prediction System',
-                          ['Diabetes Prediction',
-                           'Heart Disease Prediction',
-                           'Parkinsons Prediction',
-                           'Lung Cancer Prediction',
-                           'Skin Disease Prediction'],
-                          icons=['activity','heart','person','heart','person'],
+                          ['Heart Disease Prediction',
+                           'Lung Cancer Prediction'],
+                          icons=['activity','heart','person'],
                           default_index=0)
     
     
-if (selected == 'Skin Disease Prediction'):
-    st.title('Skin Disease Prediction')
-    
-    uploaded=st.file_uploader('Upload file here', type=['png', 'jpg'],label_visibility="visible")
-    predicted_class=''
 
-    
-
-    if st.button('Test Result'):
-        image=Image.open(uploaded)
-        image = np.array(image)
-        image = cv2.resize(image, (224, 224))
-        image = image.astype('float32') / 255.0
-        image = np.expand_dims(image, axis=0)
-        print(type(image))
-        #predictions = skin_disease_model.predict(image)
-        #predicted_class = np.argmax(predictions)
-        print(predicted_class)
 
 
 
