@@ -33,9 +33,6 @@ if (selected == 'Diabetes Prediction'):
     st.title('Diabetes Prediction using ML')
     
     
-    # getting the input data from the user
-    col1, col2, col3 = st.columns(3)
-    
     with col1:
         Pregnancies = int(st.text_input('Number of Pregnancies'))
         
@@ -115,7 +112,7 @@ if (selected == 'Heart Disease Prediction'):
         thalach = st.text_input('Maximum Heart Rate achieved')
         
     with col3:
-        exang = st.text_input('Exercise Induced Angina')
+        exang = st.text_input('Angina')
         
     with col1:
         oldpeak = st.text_input('ST depression induced by exercise')
