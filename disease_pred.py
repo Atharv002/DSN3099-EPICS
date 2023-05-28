@@ -145,9 +145,7 @@ if (selected == 'Heart Disease Prediction'):
     
 
 # Parkinson's Prediction Page
-if (selected == "Parkinsons Prediction"):
-    
-    # page title
+if (selected == "Lung Cancer Prediction"):
     st.title("Parkinson's Disease Prediction using ML")
     
     col1, col2, col3, col4, col5 = st.columns(5)  
