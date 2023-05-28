@@ -141,7 +141,6 @@ if (selected == 'Heart Disease Prediction'):
           heart_diagnosis = 'The person is having heart disease'
         else:
           heart_diagnosis = 'The person does not have any heart disease'
-        
     st.success(heart_diagnosis)
     # to print answer after prediction
         
