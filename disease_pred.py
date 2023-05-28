@@ -125,10 +125,7 @@ if (selected == 'Heart Disease Prediction'):
         
     with col1:
         thal = st.text_input('thal: 0 = normal; 1 = fixed defect; 2 = reversable defect')
-        
-        
-     
-     
+
     # code for Prediction
     heart_diagnosis = ''
     
