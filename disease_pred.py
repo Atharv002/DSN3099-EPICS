@@ -106,7 +106,7 @@ if (selected == 'Heart Disease Prediction'):
         fbs = st.text_input('Fasting Blood Sugar >= 120 mg/dl')
         
     with col1:
-        restecg = st.text_input('Resting Electrocardiographic results')
+        restecg = st.text_input('Resting Electrocardiographic results given')
         
     with col2:
         thalach = st.text_input('Maximum Heart Rate achieved')
